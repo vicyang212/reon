@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Archivo+Black&family=Noto+Serif+TC:wght@200..900&family=Righteous&display=block");
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Archivo+Black&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Righteous&display=swap");
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Righteous";
+}
+
+.background {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.outline {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  color: #dbb95a;
+  position: absolute;
+}
+.outline a {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  position: absolute;
+}
+.outline a:hover > .ON {
+  left: 140px;
+}
+.outline a:hover > .RE {
+  right: 100px;
+}
+.outline:hover + .motto {
+  opacity: 1;
+}
+
+@keyframes show_start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.RE {
+  position: relative;
+  right: 0;
+  transition: all 1s ease 0s;
+  opacity: 0;
+  animation: show_start 1s forwards;
+}
+
+.ON {
+  position: relative;
+  left: 0;
+  transition: all 1s ease 0s;
+  opacity: 0;
+  animation: show_start 1s forwards;
+}
+
+.motto {
+  font-family: "Noto Sans Traditional Chinese";
+  color: #dbb95a;
+  font-weight: bolder;
+  opacity: 0;
+  transition: all 0.5s ease 0.1s;
+  z-index: -1;
+  font-size: 1rem;
+}
+
+.up {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.down {
+  text-align: center;
+}
+
+.middleline {
+  width: 150px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dbb95a;
+}
+
+@media screen and (max-width: 764px) {
+  .outline {
+    font-size: 4.5rem;
+  }
+  .outline a:hover > .ON {
+    left: 65px;
+  }
+  .outline a:hover > .RE {
+    right: 45px;
+  }
+  .motto {
+    font-size: 0.5rem;
+  }
+  .middleline {
+    width: 90px;
+  }
+}/*# sourceMappingURL=index.css.map */

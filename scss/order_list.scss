@@ -1,0 +1,55 @@
+.order-list {
+    width: 90%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    align-items: center;
+
+}
+
+.order-list-item {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    align-items: center;
+
+    .order-title {
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+        align-items: center;
+        border: 1px solid #999;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+
+        .order-title-row {
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 1rem;
+            justify-content: space-evenly;
+
+            div {
+                width: 25%;
+            }
+
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width:900px) {
+    .login-side {
+        display: none;
+    }
+
+    .order-list {
+        width: 100%;
+    }
+}

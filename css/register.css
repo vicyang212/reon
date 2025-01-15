@@ -1,0 +1,61 @@
+.register_content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 45%;
+  height: 700px;
+  background-color: rgba(255, 255, 255, 0.7529411765);
+  border-radius: 20px;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.r-content-body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  overflow-y: scroll;
+  margin: 20px;
+  width: 100%;
+}
+
+.register-enterInput {
+  border-radius: 50px;
+  border: none;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.r-item {
+  width: 90%;
+  margin-left: 20px;
+}
+.r-item span {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0px 10px 0px 10px;
+}
+
+.register-entercity {
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 50px;
+  border: none;
+  padding: 10px 15px;
+  width: 15%;
+}
+
+.register-entertown {
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 50px;
+  border: none;
+  padding: 10px 15px;
+  width: 19%;
+}
+
+.register-entererea {
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 50px;
+  border: none;
+  padding: 10px 15px;
+  width: 58%;
+}/*# sourceMappingURL=register.css.map */

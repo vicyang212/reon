@@ -1,0 +1,136 @@
+$footer_color:#dbb95a;
+
+@mixin side_name {
+    display: flex;
+    flex-flow: column wrap;
+    height: fit-content;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    @content;
+}
+
+@mixin side_after($name) {
+    content: $name;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #979777;
+    opacity: 0.1;
+    transform: translate(0, -50%);
+    transition: all 0.5s ease 0s;
+}
+
+@mixin hover-underline {
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 0%;
+        height: 0.5px;
+        background-color: #333;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.2s ease 0s;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+
+    @content;
+}
+
+@mixin flex-col-center {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    @content;
+}
+
+@mixin flex-col-center-nowrap {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    @content;
+}
+
+@mixin disaplay_wraprow {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    @content;
+}
+
+@mixin display_row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    @content;
+}
+
+
+@mixin background-name($name) {
+    content: "#{$name}";
+    opacity: 0.3;
+    font-size: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffd667;
+    text-align: center;
+    line-height: 250%;
+    transition: all 0.4s ease 0s;
+    @content;
+}
+
+@mixin login-side-name($name) {
+    content: "#{$name}";
+    opacity: 0.5;
+    font-size: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    color: $footer_color;
+    text-align: center;
+    transition: all 0.4s ease 0s;
+    @content;
+}
+
+@mixin login-side-now($name) {
+    content: "#{$name}";
+    opacity: 0.5;
+    font-size: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    color: gray;
+    text-align: center;
+    transition: all 0.4s ease 0s;
+    @content;
+}
+
+
+@mixin item-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @content;
+}
+@mixin cartlist-align{
+    display: flex;
+    height: auto;
+    align-items: center;
+    @content
+}

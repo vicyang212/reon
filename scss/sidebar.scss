@@ -1,0 +1,87 @@
+@use '_mixin.scss' as *;
+
+/* SIDE BAR */
+#sidebar_background {
+    width: 100%;
+    background-color: #eee;
+    color: #333;
+    border-radius: 5px;
+    padding: 5% 5% 40% 5%;
+
+    .sidebar-all {
+        @include side_name;
+        padding: 10%;
+
+        &:hover {
+            &::after {
+                opacity: 0.3;
+                transform: translate(100%, -50%);
+            }
+        }
+
+        &::after {
+            @include side_after("ALL")
+        }
+    }
+
+    .sidebar-star {
+        @include side_name;
+        padding: 10%;
+
+        &:hover {
+            &::after {
+                opacity: 0.3;
+                transform: translate(55%, -50%);
+            }
+        }
+
+        &::after {
+            @include side_after("STAR");
+        }
+    }
+
+    .sidebar-level01 {
+        @include side_name();
+        padding: 10% 0 10% 10%;
+
+        .span01 {
+            @include hover-underline();
+            font-weight: bolder;
+            display: inline-block;
+            margin-bottom: 10%;
+        }
+
+        .sidebar-level02 {
+            @include side_name;
+
+            div {
+                @include hover-underline();
+            }
+        }
+
+        .sidebar-level03 {
+            @include side_name;
+            margin: 2% 0 5% 0;
+
+            span {
+                @include hover-underline();
+                opacity: 0.6;
+
+            }
+
+        }
+    }
+}
+
+#sidebar{
+    display: block;
+    width: 12%;
+    min-width: 180px;
+    max-width: 210px;
+}
+
+@media screen and (max-width:900px) {
+    #sidebar{
+        display: none;
+    }
+}

@@ -1,0 +1,17 @@
+.newslist {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0 50px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.newslist img {
+  width: 30%;
+  border-radius: 20px;
+}
+
+.newsitem {
+  display: flex;
+  flex-flow: row wrap;
+}/*# sourceMappingURL=thenew.css.map */
