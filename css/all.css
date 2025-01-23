@@ -853,7 +853,16 @@ body {
   text-align: center;
   transition: all 0.4s ease 0s;
 }
-.login-side .login-side-item:nth-child(9)::after {
+.login-side .login-side-item:hover::after, .login-side .login-side-item.activenow::after {
+  transform: translate(-50%, -30%);
+  color: gray;
+}
+.login-side .side-up {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+.login-side .side-down .login-side-item:nth-child(1)::after {
   content: "HOME";
   opacity: 0.5;
   font-size: 150%;
@@ -865,14 +874,9 @@ body {
   text-align: center;
   transition: all 0.4s ease 0s;
 }
-.login-side .login-side-item:hover::after, .login-side .login-side-item.activenow::after {
+.login-side .side-down .login-side-item:hover::after, .login-side .side-down .login-side-item.activenow::after {
   transform: translate(-50%, -30%);
   color: gray;
-}
-.login-side .side-up {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
 }
 
 @media screen and (max-width: 900px) {
@@ -880,6 +884,19 @@ body {
     display: none;
   }
 }
+.right-content {
+  width: 90%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+.right-content .header {
+  width: 100%;
+  letter-spacing: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
 #footer {
   display: flex;
   flex-flow: row nowrap;
@@ -1343,6 +1360,9 @@ body {
 .order-left .show-img {
   width: 70%;
 }
+.order-left .show-img:hover {
+  cursor: pointer;
+}
 
 .order-right {
   width: 40%;
@@ -1372,17 +1392,20 @@ body {
   padding-top: 20px;
 }
 
-#something_about {
-  height: -moz-fit-content;
-  height: fit-content;
-  /* border: 1px solid #a19060; */
-  margin: 20px;
+.intro-content {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
 }
-
-.about-item {
-  height: 200px;
-  background-color: #8b4949;
-  margin: 20px 0px;
+.intro-content img {
+  width: 95%;
+  max-width: 600px;
+}
+.intro-content .large-img {
+  width: 100%;
+  max-width: 1000px;
 }
 
 @media screen and (max-width: 900px) {
@@ -1397,6 +1420,24 @@ body {
     width: 90%;
   }
 }
+.imgBox {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6666666667);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.imgBox img {
+  width: 50%;
+  min-width: 200px;
+  max-width: 700px;
+}
+
 #shopping_content {
   margin: 1rem 1rem;
   display: flex;
@@ -1937,4 +1978,8 @@ body {
   .order-list {
     width: 100%;
   }
+}
+#member-profile .itemTeam {
+  display: flex;
+  align-items: center;
 }/*# sourceMappingURL=all.css.map */

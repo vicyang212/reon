@@ -100,7 +100,7 @@
 
 
 /* login-index */
-.login-index-outline{
+.login-index-outline {
     padding: 1rem 0;
     display: flex;
     flex-flow: column nowrap;
@@ -117,6 +117,8 @@
 
 }
 
+
+// 側攔
 .login-item {
     @include disaplay_wraprow {
         border: 2px solid $footer_color;
@@ -161,7 +163,7 @@
 }
 
 
-.login-item-content{
+.login-item-content {
     display: flex;
     flex-flow: row nowrap;
     width: 85%;
@@ -205,25 +207,51 @@
             @include login-side-name(SPECIAL) {}
         }
 
-        &:nth-child(9)::after {
-            @include login-side-name(HOME) {}
-        }
-
         &:hover::after,
         &.activenow::after {
             transform: translate(-50%, -30%);
             color: gray;
         }
     }
-    .side-up{
+
+    .side-up {
         display: flex;
         flex-flow: column nowrap;
         gap: 1rem;
     }
+
+    .side-down {
+        .login-side-item {
+
+            &:nth-child(1)::after {
+                @include login-side-name(HOME) {}
+            }
+
+            &:hover::after,
+            &.activenow::after {
+                transform: translate(-50%, -30%);
+                color: gray;
+            }
+        }
+    }
 }
 
 @media screen and (max-width:900px) {
-    .login-side{
+    .login-side {
         display: none;
+    }
+}
+
+.right-content {
+    width: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+
+    .header {
+        width: 100%;
+        letter-spacing: 5px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
     }
 }

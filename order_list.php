@@ -36,6 +36,7 @@ if (!isset($_SESSION['login'])) {
             <div class="btn btn-reon-logout"><a href="logout.php">登出</a></div>
         </div>
         <div class="login-item-content">
+            <?php require_once("login-side.php") ?>
             <?php require_once("order-list-content.php") ?>
         </div>
 
@@ -198,6 +199,24 @@ if (!isset($_SESSION['login'])) {
 
     <?php require_once("footer.php") ?>
     <?php require_once("jsfile.php") ?>
+
+    <script>
+        const memberIcon = document.querySelector("#member")
+        const orderIcon = document.querySelector("#order")
+        const wishIcon = document.querySelector("#wish")
+        const specialIcon = document.querySelector("#special")
+        const path = window.location.pathname;
+
+        if (path.includes("member")) {
+            memberIcon.classList.add("activenow");
+        } else if (path.includes("order")) {
+            orderIcon.classList.add("activenow");
+        } else if (path.includes("wish")) {
+            wishIcon.classList.add("activenow");
+        } else if (path.includes("special")) {
+            specialIcon.classList.add("activenow");
+        }
+    </script>
 </body>
 
 </html>

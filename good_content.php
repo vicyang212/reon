@@ -79,3 +79,7 @@
     </div>
 
 </div>
+
+<div class="imgBox">
+    <img src="./images/CooperVision1-2.webp">
+</div>

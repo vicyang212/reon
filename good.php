@@ -35,13 +35,29 @@ require_once("php_lib.php");
     <?php require_once("product_count.php") ?>
 
     <script>
-        // 商品側欄圖片轉換
-        $(function() {
-            $(".side-img a").mouseover(function() {
-                var imgsrc = $(this).children("img").attr("src");
-                $('#showGoods').attr("src", imgsrc);
-            });
-        });
+        // 商品圖展示
+        const sideImg=document.querySelectorAll(".side-img .side-img-item");
+        const showImg=document.querySelector("#showGoods");
+        const box=document.querySelector(".imgBox");
+        const boxImg=document.querySelector(".imgBox img")
+
+        sideImg.forEach(sideImg=>{
+            sideImg.addEventListener("click",()=>{
+                const sideImgSrc=sideImg.getAttribute("src");
+                showImg.src=sideImgSrc;
+            })
+        })
+
+        showImg.addEventListener("click",()=>{
+            boxImg.src=showImg.src;
+            box.style.display="flex";
+        })
+
+        box.addEventListener("click",()=>{
+            box.style.display="none";
+        })
+
+        
 
         // 下單數量按鈕
         const input = document.getElementById('numberInput');
