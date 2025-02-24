@@ -1,6 +1,7 @@
 <!-- 資料庫連線 -->
 <?php
 require_once('Connections/dbset.php');
+require_once("feedback.php");
 //如果session沒有自動啟動，則手動命令session功能
 (!isset($_SESSION)) ? session_start() : "";
 require_once("php_lib.php");

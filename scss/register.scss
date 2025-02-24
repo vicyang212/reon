@@ -2,13 +2,20 @@
 
 .register_content {
     @include flex-col-center-nowrap {
-        width: 45%;
-        height: 700px;
+        width: 60%;
+        height: 90%;
+        min-width: 300px;
         background-color: #ffffffc0;
         border-radius: 20px;
-        padding: 20px;
+        padding: 1%;
         overflow-x: hidden;
+        font-size: 1rem;
     }
+}
+
+.r-content-head{
+    font-size: 1.2rem;
+    font-weight: bolder;
 }
 
 .r-content-body {
@@ -38,26 +45,26 @@
 }
 
 
-.register-entercity {
-    margin: 0.5rem 0 1rem 0;
-    border-radius: 50px;
-    border: none;
-    padding: 10px 15px;
-    width: 15%;
-}
+// .register-entercity {
+//     margin: 0.5rem 0 1rem 0;
+//     border-radius: 50px;
+//     border: none;
+//     padding: 10px 15px;
+//     width: 15%;
+// }
 
-.register-entertown {
-    margin: 0.5rem 0 1rem 0;
-    border-radius: 50px;
-    border: none;
-    padding: 10px 15px;
-    width: 19%;
-}
+// .register-entertown {
+//     margin: 0.5rem 0 1rem 0;
+//     border-radius: 50px;
+//     border: none;
+//     padding: 10px 15px;
+//     width: 19%;
+// }
 
 .register-entererea {
     margin: 0.5rem 0 1rem 0;
     border-radius: 50px;
     border: none;
     padding: 10px 15px;
-    width: 58%;
+    width: 100%;
 }

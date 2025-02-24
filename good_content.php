@@ -45,7 +45,7 @@
             <p class="order-price">$<?php echo $dataList['p_price']; ?></p>
             <p class="card-text">數量<br>
             <div class="input-group order-num">
-                <input type="type" class="form-control" value="0" onkeypress="return isNumberKey(event)"
+                <input type="text" class="form-control" value="1" onkeypress="return isNumberKey(event)"
                     onchange="validateInput(this)" id="numberInput">
                 <button class="btn btn-outline-dark" type="button" onclick="increaseValue()">+</button>
                 <button class="btn btn-outline-dark" type="button" onclick="decreaseValue()">-</button>
@@ -80,6 +80,6 @@
 
 </div>
 
-<div class="imgBox">
+<!-- <div class="imgBox">
     <img src="./images/CooperVision1-2.webp">
-</div>
+</div> -->

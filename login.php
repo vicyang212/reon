@@ -1,6 +1,7 @@
 <!-- 資料庫連線 -->
 <?php
 require_once('Connections/dbset.php');
+require_once("feedback.php");
 //如果session沒有自動啟動，則手動命令session功能
 (!isset($_SESSION)) ? session_start() : "";
 require_once("php_lib.php");
@@ -28,7 +29,7 @@ if (isset($_SESSION['login'])) {
 
 <body>
     <?php require_once("newnavbar.php") ?>
-    <div id="outline">
+    <div class="outline">
         <div class="frame">
             <form action="" method="POST" class="form-signin" id="forml">
                 <div class="logo">REON</div>
@@ -38,8 +39,7 @@ if (isset($_SESSION['login'])) {
                 <div class="enterBox" class="enterInput">密碼</div>
                 <input type="password" class="enterInput" placeholder="password" id="inputPassword" name="inputPassword" required>
                 <button type="submit" class="btn-login">登 入</button>
-                <br>
-                <div class="forget"><a href="#">忘記密碼</a></div>
+                <!-- <div class="forget"><a href="#">忘記密碼</a></div> -->
                 <div class="forget"><a href="register_nooption.php">還不是會員</a></div>
             </form>
         </div>

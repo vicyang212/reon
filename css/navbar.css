@@ -257,6 +257,13 @@
   margin: 0;
 }
 
+#cart_table {
+  width: 100%;
+}
+#cart_table tr {
+  height: 50px;
+}
+
 @media screen and (max-width: 900px) {
   .navbar-wrapper-new-m {
     display: block;

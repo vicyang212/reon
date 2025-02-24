@@ -111,25 +111,25 @@
             if ($cart_rs->rowCount() > 0) {  // 確認購物車是否有商品
             ?>
                 <table id="cart_table">
-                    <tr style="margin-bottom: 5px;">
+                    <tr style="font-weight: bold;border-bottom:1px solid #ccc;">
                         <td style="width: 60%;">名稱</td>
                         <td style="width: 20%;text-align:center;">數量</td>
-                        <td style="width: 20%;text-align:center;">金額</td>
+                        <td style="width: 20%;text-align:right;">金額</td>
                     </tr>
                     <?php
                     while ($cartList = $cart_rs->fetch()) {
                         $lineTotal = $cartList['p_price'] * $cartList['qty'];
                         $subtotal += $lineTotal;
                     ?>
-                        <tr class="cart_tr">
-                            <td class="cart_td"><?php echo htmlspecialchars($cartList['p_name']); ?></td>
-                            <td style="width: 20%;text-align:center" class="cart_td"><?php echo htmlspecialchars($cartList['qty']); ?></td>
-                            <td style="width: 20%;text-align:center" class="cart_td"><?php echo htmlspecialchars($lineTotal); ?></td>
+                        <tr>
+                            <td><?php echo htmlspecialchars($cartList['p_name']); ?></td>
+                            <td style="width: 20%;text-align:center"><?php echo htmlspecialchars($cartList['qty']); ?></td>
+                            <td style="width: 20%;text-align:right"><?php echo htmlspecialchars($lineTotal); ?></td>
                         </tr>
                     <?php
                     }
                     ?>
-                    <tr style="border: none;">
+                    <tr style="border-top:1px solid #ccc;">
                         <td>小計</td>
                         <td colspan="2" style="text-align:right;font-weight:bolder;">$<?php echo htmlspecialchars($subtotal); ?></td>
                     </tr>

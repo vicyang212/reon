@@ -3,7 +3,7 @@
     $("input").change(function() {
         var qty = $(this).val();
         const cartid = $(this).attr("cartid");
-        if (qty <= 0 || qty >= 50) {
+        if (qty <= 0 || qty > 50) {
             alert("商品數量需在1至50之間");
             return false;
         }
@@ -18,12 +18,13 @@
             success: function(data) {
                 if (data.c == true) {
                     window.location.reload();
+                    console.log(data)
                 } else {
                     alert(data.m);
                 }
             },
-            error: function(data) {
-                alert("系統無法連上資料庫");
+            error: function(xhr,status,error) {
+                alert("系統無法連上資料庫"+error);
             }
         });
     })

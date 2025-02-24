@@ -1,6 +1,7 @@
 <!-- 資料庫連線 -->
 <?php
 require_once('Connections/dbset.php');
+require_once("feedback.php");
 
 //如果session沒有自動啟動，則手動命令session功能
 (!isset($_SESSION)) ? session_start() : "";
@@ -29,17 +30,15 @@ require_once("php_lib.php");
 
     </section>
 
-
     <?php require_once("footer.php") ?>
     <?php require_once("jsfile.php") ?>
-    <?php require_once("product_count.php") ?>
 
     <script>
         // 商品圖展示
         const sideImg=document.querySelectorAll(".side-img .side-img-item");
         const showImg=document.querySelector("#showGoods");
-        const box=document.querySelector(".imgBox");
-        const boxImg=document.querySelector(".imgBox img")
+        // const box=document.querySelector(".imgBox");
+        // const boxImg=document.querySelector(".imgBox img")
 
         sideImg.forEach(sideImg=>{
             sideImg.addEventListener("click",()=>{
@@ -53,15 +52,13 @@ require_once("php_lib.php");
             box.style.display="flex";
         })
 
-        box.addEventListener("click",()=>{
-            box.style.display="none";
-        })
-
-        
+        // box.addEventListener("click",()=>{
+        //     box.style.display="none";
+        // })
 
         // 下單數量按鈕
         const input = document.getElementById('numberInput');
-        const minValue = 0; // 設置最小值
+        const minValue = 1; // 設置最小值
         const maxValue = 50; // 設置最大值
 
         function increaseValue() {

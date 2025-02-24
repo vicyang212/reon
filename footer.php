@@ -24,10 +24,10 @@
             <div class="footer_title mottoline">尋找你眼裡的光</div>
             <div class="social-media-logo">
                 <h5>
-                    <a href="#" title="instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" title="facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" title="line"><i class="fa-brands fa-line"></i></a>
-                    <a href="#" title="youtube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/" title="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/?locale=zh_TW" title="facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.line.me/tw/" title="line" target="_blank"><i class="fa-brands fa-line"></i></a>
+                    <a href="https://www.youtube.com/" title="youtube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                 </h5>
             </div>
             <!-- Button trigger modal -->

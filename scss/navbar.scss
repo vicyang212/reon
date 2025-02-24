@@ -260,6 +260,16 @@
     }
 }
 
+// 購物車預覽
+#cart_table{
+    width: 100%;
+    tr{
+        height: 50px;
+    }
+}
+
+
+
 @media screen and (max-width:900px) {
     .navbar-wrapper-new-m {
         display: block;

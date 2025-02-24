@@ -1,6 +1,7 @@
 <!-- 資料庫連線 -->
 <?php
 require_once('Connections/dbset.php');
+require_once("feedback.php");
 
 //如果session沒有自動啟動，則手動命令session功能
 (!isset($_SESSION)) ? session_start() : "";
@@ -52,9 +53,14 @@ if (!isset($_SESSION['login'])) {
         $(".cart-list input").change(function() {
             var qty = $(this).val();
             const cartid = $(this).attr("cartid");
-            if (qty <= 0 || qty >= 50) {
-                alert("更改數量需大於0以上，以及小於50以下。");
-                return false;
+            if (qty <= 0) {
+                alert("商品數量需要至少1件。已為您調整為1件。");
+                qty=1;
+                $(this).val(qty);
+            } else if (qty > 50) {
+                alert("商品數量至多50件，若須50件以上請聯絡本店。已為您調整為50件。");
+                qty=50;
+                $(this).val(qty);
             }
             $.ajax({
                 url: 'change_qty.php',
@@ -64,8 +70,8 @@ if (!isset($_SESSION['login'])) {
                     qty: qty,
                 },
                 success: function(data) {
-                    if (data.c == true) {
-                        //alert(data.m);
+                    if (data.c == 1) {
+                        alert(data.m);
                         window.location.reload();
                     } else {
                         alert(data.m)
@@ -80,7 +86,7 @@ if (!isset($_SESSION['login'])) {
         $('#btn04').click(function() {
             let msg = "系統將進行結帳，請確認金額與收件人是否正確";
             if (!confirm(msg)) return false;
-            var fullAddress=$("#fullAddress").text();
+            var fullAddress = $("#fullAddress").text();
             $.ajax({
                 url: 'addorder.php',
                 type: 'post',

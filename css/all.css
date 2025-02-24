@@ -580,6 +580,13 @@ body {
   margin: 0;
 }
 
+#cart_table {
+  width: 100%;
+}
+#cart_table tr {
+  height: 50px;
+}
+
 @media screen and (max-width: 900px) {
   .navbar-wrapper-new-m {
     display: block;
@@ -589,10 +596,10 @@ body {
   }
 }
 /* login登入畫面 */
-#outline {
+.outline {
   overflow: hidden;
   width: 100%;
-  height: 800px;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -603,20 +610,20 @@ body {
 }
 
 .frame {
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 18rem;
-  border-radius: 2rem;
+  padding: 20px 0;
+  width: 25%;
+  min-width: 250px;
+  border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 5px 5px 15px rgb(66, 66, 66);
   animation: slideIn 1.2s ease forwards;
-  padding: 10px;
 }
 .frame form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 10px;
 }
 
 @keyframes slideIn {
@@ -629,46 +636,44 @@ body {
 }
 .logo {
   font-size: 2rem;
-  padding: 1rem;
   color: #ffd667;
   font-weight: bolder;
   text-shadow: 1px 1px 2px gray;
+  padding-bottom: 10px;
 }
 
 .title {
   font-size: 1rem;
-  padding-bottom: 1.2rem;
+  padding-bottom: 10px;
 }
 
 .enterBox {
   font-size: 0.9rem;
-  padding-bottom: 0.5rem;
 }
 
 .enterInput {
-  margin-bottom: 1rem;
   border-radius: 20px;
   border: none;
   padding-left: 10px;
   height: 2rem;
   border: solid 2px white;
-  width: auto;
+  width: 75%;
 }
 .enterInput:hover {
   border: solid 2px black;
 }
 
 .btn-login {
-  margin-top: 2.5rem;
   border-radius: 20px;
   height: 2rem;
-  width: 12rem;
+  width: 75%;
   border: none;
   color: white;
   background-color: #a19060;
   transition: all 0.1s ease 0s;
   text-align: center;
   font-size: 1rem;
+  margin-top: 10px;
 }
 .btn-login:hover {
   border: solid 3px white;
@@ -676,7 +681,6 @@ body {
 
 .forget {
   font-size: 0.9rem;
-  padding-bottom: 0.5rem;
   text-decoration: underline;
 }
 
@@ -1103,12 +1107,19 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  width: 45%;
-  height: 700px;
+  width: 60%;
+  height: 90%;
+  min-width: 300px;
   background-color: rgba(255, 255, 255, 0.7529411765);
   border-radius: 20px;
-  padding: 20px;
+  padding: 1%;
   overflow-x: hidden;
+  font-size: 1rem;
+}
+
+.r-content-head {
+  font-size: 1.2rem;
+  font-weight: bolder;
 }
 
 .r-content-body {
@@ -1137,28 +1148,12 @@ body {
   padding: 0px 10px 0px 10px;
 }
 
-.register-entercity {
-  margin: 0.5rem 0 1rem 0;
-  border-radius: 50px;
-  border: none;
-  padding: 10px 15px;
-  width: 15%;
-}
-
-.register-entertown {
-  margin: 0.5rem 0 1rem 0;
-  border-radius: 50px;
-  border: none;
-  padding: 10px 15px;
-  width: 19%;
-}
-
 .register-entererea {
   margin: 0.5rem 0 1rem 0;
   border-radius: 50px;
   border: none;
   padding: 10px 15px;
-  width: 58%;
+  width: 100%;
 }
 
 /* SIDE BAR */
@@ -1980,6 +1975,7 @@ body {
   }
 }
 #member-profile .itemTeam {
+  height: 1.2rem;
   display: flex;
   align-items: center;
 }/*# sourceMappingURL=all.css.map */

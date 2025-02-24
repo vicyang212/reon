@@ -1,6 +1,7 @@
 <!-- 資料庫連線 -->
 <?php
 require_once('Connections/dbset.php');
+require_once("feedback.php");
 //如果session沒有自動啟動，則手動命令session功能
 (!isset($_SESSION)) ? session_start() : "";
 require_once("php_lib.php");
@@ -58,11 +59,11 @@ require_once("php_lib.php");
         }
     }
     ?>
-    <form action="register.php" method="post" id="reg" name="reg">
-        <div id="outline">
+    <form action="register_nooption.php" method="post" id="reg" name="reg">
+        <div class="outline">
             <div class="register_content">
                 <div class="r-content-head">
-                    <h4 style="font-weight: bolder;">加入會員</h4>
+                    加入會員
                 </div>
                 <div class="r-content-body">
                     <div class="r-item">
@@ -110,6 +111,8 @@ require_once("php_lib.php");
 
     <?php require_once("footer.php") ?>
     <?php require_once("jsfile.php") ?>
+
+    <!-- 驗證碼 -->
     <script src="commlib.js"></script>
     <script src="jquery.validate.js"></script>
     <script>
@@ -217,57 +220,57 @@ require_once("php_lib.php");
         $(function() {
             getCaptcha();
             // 取得縣市代碼後查詢縣市名稱
-            $("#myCity").change(function() {
-                var CNo = $('#myCity').val();
-                if (CNo == "") {
-                    return false;
-                }
-                $.ajax({
-                    // 將縣市名稱從後台取出
-                    url: 'Town_ajax.php',
-                    type: 'post',
-                    dataType: 'json',
-                    data: {
-                        CNo: CNo,
-                    },
-                    success: function(data) {
-                        if (data.c == true) {
-                            $('#myTown').html(data.m);
-                            $('#myZip').val("");
-                        } else {
-                            alert(data.m);
-                        }
-                    },
-                    error: function(data) {
-                        alert("系統目前無法連線至資料庫")
-                    }
-                });
-            });
-            $("#myTown").change(function() {
-                var AutoNo = $('#myTown').val();
-                if (AutoNo == "") {
-                    return false;
-                }
-                $.ajax({
-                    url: 'Zip_ajax.php',
-                    type: 'get',
-                    dataType: 'json',
-                    data: {
-                        AutoNo: AutoNo,
-                    },
-                    success: function(data) {
-                        if (data.c == true) {
-                            $('#myZip').val(data.Post);
-                            $('#zipcode').html(data.Post + data.Cityname + data.Name);
-                        } else {
-                            alert(data.m);
-                        }
-                    },
-                    error: function(data) {
-                        alert("系統目前無法連線至資料庫")
-                    }
-                });
-            });
+            // $("#myCity").change(function() {
+            //     var CNo = $('#myCity').val();
+            //     if (CNo == "") {
+            //         return false;
+            //     }
+            //     $.ajax({
+            //         // 將縣市名稱從後台取出
+            //         url: 'Town_ajax.php',
+            //         type: 'post',
+            //         dataType: 'json',
+            //         data: {
+            //             CNo: CNo,
+            //         },
+            //         success: function(data) {
+            //             if (data.c == true) {
+            //                 $('#myTown').html(data.m);
+            //                 $('#myZip').val("");
+            //             } else {
+            //                 alert(data.m);
+            //             }
+            //         },
+            //         error: function(data) {
+            //             alert("系統目前無法連線至資料庫")
+            //         }
+            //     });
+            // });
+            // $("#myTown").change(function() {
+            //     var AutoNo = $('#myTown').val();
+            //     if (AutoNo == "") {
+            //         return false;
+            //     }
+            //     $.ajax({
+            //         url: 'Zip_ajax.php',
+            //         type: 'get',
+            //         dataType: 'json',
+            //         data: {
+            //             AutoNo: AutoNo,
+            //         },
+            //         success: function(data) {
+            //             if (data.c == true) {
+            //                 $('#myZip').val(data.Post);
+            //                 $('#zipcode').html(data.Post + data.Cityname + data.Name);
+            //             } else {
+            //                 alert(data.m);
+            //             }
+            //         },
+            //         error: function(data) {
+            //             alert("系統目前無法連線至資料庫")
+            //         }
+            //     });
+            // });
         })
     </script>
 </body>
